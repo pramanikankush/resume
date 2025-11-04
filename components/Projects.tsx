@@ -5,33 +5,41 @@ import { GitHubIcon, ExternalLinkIcon } from './icons';
 
 const projectsData: Project[] = [
   {
-    title: 'Agentic Workflow Orchestrator',
-    description: 'An autonomous system that intelligently manages and executes complex data processing workflows using a multi-agent architecture.',
+    title: 'Plant Health Analyzer',
+    description: 'Production-ready Flask application using Google Gemini AI for plant disease detection with enterprise-grade security.',
     imageUrl: 'https://picsum.photos/seed/project1/600/400',
-    tags: ['LangChain', 'FastAPI', 'RAG', 'LLMs'],
-    githubUrl: '#',
-    demoUrl: '#',
+    tags: ['Gemini', 'Flask', 'SQLite', 'LLMs', 'Supabase'],
+    githubUrl: 'https://github.com/pramanikankush/Plant-Health-Analyzer.git',
+    demoUrl: 'https://plant-health-analyzer-1.onrender.com',
   },
   {
-    title: 'RAG-powered Knowledge Engine',
-    description: 'A powerful Q&A engine that retrieves and synthesizes information from a massive private knowledge base to provide accurate, context-aware answers.',
+    title: 'Personal Cloud Storage',
+    description: 'A modern, AI-powered personal cloud storage solution built with Next.js, featuring intelligent file organization, secure authentication, and seamless payment integration.',
     imageUrl: 'https://picsum.photos/seed/project2/600/400',
-    tags: ['LlamaIndex', 'VectorDBs', 'OpenAI API', 'Python'],
-    githubUrl: '#',
-    demoUrl: '#',
+    tags: ['Next.js ', 'Clerk', 'Generative AI', 'Supabase' , 'Stripe'],
+    githubUrl: 'https://github.com/pramanikankush/personal-cloud.git',
+    demoUrl: 'https://personal-cloud-two.vercel.app/',
   },
   {
-    title: 'Autonomous Report Generator',
-    description: 'An AI agent that automatically queries data sources, performs analysis, and generates comprehensive, well-structured reports.',
+    title: 'Smart Invoice Scanner',
+    description: 'An intelligent invoice processing system that uses Google\'s Gemini AI to extract and manage invoice data automatically.',
     imageUrl: 'https://picsum.photos/seed/project3/600/400',
-    tags: ['Data Science', 'MLOps', 'Python', 'Agentic AI'],
-    githubUrl: '#',
-    demoUrl: '#',
+    tags: ['Flask ', 'MLOps', 'SQLite ', 'Agentic AI', 'Supabase'],
+    githubUrl: 'https://github.com/pramanikankush/your-invoice.git',
+    demoUrl: 'https://your-invoice.onrender.com/',
+  },
+  {
+    title: 'YouTube Stats Tracker Builder',
+    description: 'A user-friendly web application to generate a personalized Chrome extension for tracking any YouTube channel\'s statistics, no coding required.',
+    imageUrl: 'https://picsum.photos/seed/project4/600/400',
+    tags: ['Flask ', 'MLOps', 'SQLite ', 'Agentic AI', 'JSZip'],
+    githubUrl: 'https://github.com/pramanikankush/Youtube-stats-extension-builder.git',
+    demoUrl: 'https://youtube-stats-extension-builder.vercel.app/',
   },
 ];
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
-  <div className="rounded-2xl p-6 bg-light-bg dark:bg-dark-bg shadow-neumorphic-light dark:shadow-neumorphic-dark transition-all duration-300 hover:shadow-neumorphic-light-hover dark:hover:shadow-neumorphic-dark-hover flex flex-col transform hover:-translate-y-1 hover:scale-[1.03]">
+  <div className="rounded-2xl p-6 bg-light-bg dark:bg-dark-bg shadow-neumorphic-light dark:shadow-neumorphic-dark transition-all duration-300 hover:shadow-neumorphic-light-hover dark:hover:shadow-neumorphic-dark-hover flex flex-col transform hover:-translate-y-1 hover:scale-[1.02] h-full">
     <img src={project.imageUrl} alt={project.title} className="rounded-lg w-full h-48 object-cover mb-4" />
     <div className="flex-grow">
       <h3 className="text-xl font-bold font-display mb-2 text-gray-800 dark:text-white">{project.title}</h3>
@@ -60,7 +68,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
 const Projects: React.FC = () => {
   return (
     <Section id="projects" title="Impactful Projects">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
         {projectsData.map(project => (
           <ProjectCard key={project.title} project={project} />
         ))}

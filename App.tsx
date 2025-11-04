@@ -7,8 +7,8 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SectionDivider from './components/SectionDivider';
-// Fix: Import the Experience component to be rendered in the app.
-import Experience from './components/Experience';
+// Import the Achievements component to be rendered in the app.
+import Achievements from './components/Achievements';
 
 const App: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -41,8 +41,8 @@ const App: React.FC = () => {
         <SectionDivider />
         <Projects />
         <SectionDivider />
-        {/* Fix: Render the Experience component. */}
-        <Experience />
+        {/* Render the Achievements component. */}
+        <Achievements />
         <SectionDivider />
         <Contact />
       </main>

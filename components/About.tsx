@@ -6,11 +6,12 @@ const About: React.FC = () => {
     <Section id="about" title="About Me">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center max-w-5xl mx-auto">
         <div className="md:col-span-1 flex justify-center">
-          <div className="p-2 rounded-full bg-light-bg dark:bg-dark-bg shadow-neumorphic-light dark:shadow-neumorphic-dark">
+          <div className="p-3 rounded-full bg-light-bg dark:bg-dark-bg shadow-neumorphic-light dark:shadow-neumorphic-dark">
             <img
-              src="https://picsum.photos/seed/ankush/300/300"
-              alt="Ankush"
-              className="rounded-full w-48 h-48 object-cover"
+              src="./Ankush Pramanik Passport Photo.png"
+              alt="Ankush Pramanik"
+              className="rounded-full w-64 h-64 object-cover object-center"
+              style={{ objectPosition: 'center top' }}
             />
           </div>
         </div>

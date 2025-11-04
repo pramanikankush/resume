@@ -34,7 +34,14 @@ const Hero: React.FC = () => {
                 text="View Projects"
             />
             <AnimatedButton
-                onClick={() => window.open('/resume.pdf', '_blank')}
+                onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = './Ankush Pramanik CV.pdf';
+                    link.download = 'Ankush_Pramanik_CV.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }}
                 className="btn-secondary"
                 text="Download Resume"
             />

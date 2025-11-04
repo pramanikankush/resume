@@ -9,17 +9,27 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log({
-      name,
-      email,
-      message,
-    });
-    // For demonstration purposes, we'll just alert the user.
-    // In a real application, this is where you'd send the data to a server.
-    alert('Message sent! Check the developer console for the form data.');
+    
+    // Create mailto link to send email directly
+    const subject = encodeURIComponent(`Portfolio Contact: Message from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\n` +
+      `Email: ${email}\n\n` +
+      `Message:\n${message}`
+    );
+    
+    const mailtoLink = `mailto:ankushpramanik@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Open default email client
+    window.location.href = mailtoLink;
+    
+    // Clear form
     setName('');
     setEmail('');
     setMessage('');
+    
+    // Show success message
+    alert('Opening your email client to send the message!');
   };
 
   return (
@@ -81,10 +91,10 @@ const Contact: React.FC = () => {
         </form>
 
         <div className="flex justify-center space-x-6">
-          <a href="#" className="text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition-all duration-300 transform hover:scale-110">
+          <a href="https://github.com/pramanikankush" className="text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition-all duration-300 transform hover:scale-110">
             <GitHubIcon className="h-8 w-8" />
           </a>
-          <a href="#" className="text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition-all duration-300 transform hover:scale-110">
+          <a href="https://www.linkedin.com/in/ankush-pramanik-853565259/" className="text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition-all duration-300 transform hover:scale-110">
             <LinkedInIcon className="h-8 w-8" />
           </a>
           <a href="#" className="text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition-all duration-300 transform hover:scale-110">

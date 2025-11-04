@@ -3,18 +3,45 @@ import Section from './Section';
 import { Skill } from '../types';
 
 const skillsData: Skill[] = [
+  // Core Programming
   { name: 'Python' },
+  { name: 'JavaScript' },
+  
+  // LLM & Gen AI
+  { name: 'OpenAI API' },
+  { name: 'Anthropic Claude' },
+  { name: 'Gemini API' },
+  { name: 'Hugging Face' },
+  { name: 'Transformers' },
+  { name: 'Fine-tuning' },
+  { name: 'Prompt Engineering' },
+  
+  // Agentic AI Frameworks
   { name: 'LangChain' },
   { name: 'LlamaIndex' },
-  { name: 'OpenAI API' },
-  { name: 'FastAPI' },
+  { name: 'AutoGen' },
+  { name: 'CrewAI' },
+  { name: 'LangGraph' },
+  
+  // RAG & Vector
   { name: 'RAG Pipelines' },
   { name: 'Vector Databases' },
-  { name: 'Data Science' },
-  { name: 'MLOps' },
+  { name: 'Pinecone' },
+  { name: 'Chroma' },
+  { name: 'FAISS' },
+  
+  // Additional Frameworks
+  { name: 'FastAPI' },
+  { name: 'Streamlit' },
+  { name: 'Gradio' },
+  { name: 'Flask' },
   { name: 'Next.js' },
-  { name: 'Tailwind CSS' },
+  
+  // DevOps & Tools
   { name: 'Docker' },
+  { name: 'MLOps' },
+  { name: 'Data Science' },
+  { name: 'Tailwind CSS' },
 ];
 
 const SkillBadge: React.FC<{ skill: Skill }> = ({ skill }) => (
