@@ -1,0 +1,99 @@
+import React, { useState } from 'react';
+import Section from './Section';
+import { GitHubIcon, LinkedInIcon, TwitterIcon } from './icons';
+
+const Contact: React.FC = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log({
+      name,
+      email,
+      message,
+    });
+    // For demonstration purposes, we'll just alert the user.
+    // In a real application, this is where you'd send the data to a server.
+    alert('Message sent! Check the developer console for the form data.');
+    setName('');
+    setEmail('');
+    setMessage('');
+  };
+
+  return (
+    <Section id="contact" title="Get In Touch">
+      <div className="max-w-xl mx-auto text-center">
+        <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+          I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious vision. Feel free to reach out.
+        </p>
+
+        <form onSubmit={handleSubmit} className="space-y-6 text-left mb-12">
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 sr-only">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              placeholder="Your Name"
+              className="w-full px-4 py-3 rounded-lg bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text shadow-neumorphic-light-inset dark:shadow-neumorphic-dark-inset focus:outline-none focus:ring-2 focus:ring-accent transition-all duration-300"
+            />
+          </div>
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 sr-only">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              placeholder="Your Email"
+              className="w-full px-4 py-3 rounded-lg bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text shadow-neumorphic-light-inset dark:shadow-neumorphic-dark-inset focus:outline-none focus:ring-2 focus:ring-accent transition-all duration-300"
+            />
+          </div>
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 sr-only">Message</label>
+            <textarea
+              name="message"
+              id="message"
+              rows={5}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
+              placeholder="Your Message"
+              className="w-full px-4 py-3 rounded-lg bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text shadow-neumorphic-light-inset dark:shadow-neumorphic-dark-inset focus:outline-none focus:ring-2 focus:ring-accent transition-all duration-300"
+            ></textarea>
+          </div>
+          <div className="text-center pt-4">
+            <button
+              type="submit"
+              className="btn-animated-send"
+            >
+              <span className="relative z-10">Send Message</span>
+              <span className="ripple-pulse" aria-hidden="true"></span>
+            </button>
+          </div>
+        </form>
+
+        <div className="flex justify-center space-x-6">
+          <a href="#" className="text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition-all duration-300 transform hover:scale-110">
+            <GitHubIcon className="h-8 w-8" />
+          </a>
+          <a href="#" className="text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition-all duration-300 transform hover:scale-110">
+            <LinkedInIcon className="h-8 w-8" />
+          </a>
+          <a href="#" className="text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition-all duration-300 transform hover:scale-110">
+            <TwitterIcon className="h-8 w-8" />
+          </a>
+        </div>
+      </div>
+    </Section>
+  );
+};
+
+export default Contact;

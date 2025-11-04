@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-g" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ankush | Agentic AI & Data Science Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Poppins', 'sans-serif'],
+            },
+            boxShadow: {
+              'neumorphic-light': '5px 5px 10px #d1d9e6, -5px -5px 10px #ffffff',
+              'neumorphic-light-inset': 'inset 5px 5px 10px #d1d9e6, inset -5px -5px 10px #ffffff',
+              'neumorphic-light-hover': '8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff',
+              'neumorphic-dark': '5px 5px 10px #1a1f2c, -5px -5px 10px #2a3344',
+              'neumorphic-dark-inset': 'inset 5px 5px 10px #1a1f2c, inset -5px -5px 10px #2a3344',
+              'neumorphic-dark-hover': '8px 8px 16px #1a1f2c, -8px -8px 16px #2a3344',
+            },
+            colors: {
+              'light-bg': '#e0e5ec',
+              'dark-bg': '#222736',
+              'light-text': '#374151',
+              'dark-text': '#d1d5db',
+              'accent': '#3b82f6',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Animated button style adapted for the portfolio theme */
+      .btn-53,
+      .btn-53 *,
+      .btn-53 :after,
+      .btn-53 :before,
+      .btn-53:after,
+      .btn-53:before {
+        border: 0 solid;
+        box-sizing: border-box;
+      }
+
+      .btn-53 {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-appearance: button;
+        background-image: none;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 1.125rem; /* text-lg */
+        line-height: 1.5;
+        margin: 0;
+        -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+        padding: 0;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .btn-53:disabled {
+        cursor: default;
+      }
+
+      .btn-53:-moz-focusring {
+        outline: auto;
+      }
+      
+      .btn-53:focus-visible {
+        outline: 2px solid #3b82f6;
+        outline-offset: 2px;
+      }
+
+      .btn-53 {
+        border-width: 2px;
+        border-radius: 0.5rem; /* rounded-lg */
+        box-sizing: border-box;
+        display: block;
+        font-weight: 600; /* font-semibold */
+        overflow: hidden;
+        padding: 0.75rem 2rem; /* py-3 px-8 */
+        position: relative;
+        width: 100%;
+      }
+      
+      @media (min-width: 640px) { /* sm breakpoint */
+          .btn-53 {
+              width: auto;
+          }
+      }
+
+      .btn-53 .original {
+        display: grid;
+        inset: 0;
+        place-content: center;
+        position: absolute;
+        transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+      }
+
+      .btn-53:hover .original {
+        transform: translateY(100%);
+      }
+
+      .btn-53 .letters {
+        display: inline-flex;
+      }
+
+      .btn-53 span {
+        opacity: 0;
+        transform: translateY(-15px);
+        transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1), opacity 0.3s;
+      }
+
+      .btn-53 span:nth-child(2n) {
+        transform: translateY(15px);
+      }
+
+      .btn-53:hover span {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      /* Staggered animation for letters */
+      .btn-53:hover span:nth-child(1) { transition-delay: 0s; }
+      .btn-53:hover span:nth-child(2) { transition-delay: 0.05s; }
+      .btn-53:hover span:nth-child(3) { transition-delay: 0.1s; }
+      .btn-53:hover span:nth-child(4) { transition-delay: 0.15s; }
+      .btn-53:hover span:nth-child(5) { transition-delay: 0.2s; }
+      .btn-53:hover span:nth-child(6) { transition-delay: 0.25s; }
+      .btn-53:hover span:nth-child(7) { transition-delay: 0.3s; }
+      .btn-53:hover span:nth-child(8) { transition-delay: 0.35s; }
+      .btn-53:hover span:nth-child(9) { transition-delay: 0.4s; }
+      .btn-53:hover span:nth-child(10) { transition-delay: 0.45s; }
+      .btn-53:hover span:nth-child(11) { transition-delay: 0.5s; }
+      .btn-53:hover span:nth-child(12) { transition-delay: 0.55s; }
+      .btn-53:hover span:nth-child(13) { transition-delay: 0.6s; }
+      .btn-53:hover span:nth-child(14) { transition-delay: 0.65s; }
+      .btn-53:hover span:nth-child(15) { transition-delay: 0.7s; }
+
+      /* --- Theme Integration --- */
+      
+      /* Primary Button (View Projects) */
+      .btn-primary {
+        border-color: #3b82f6; /* accent */
+        color: #fff;
+      }
+      .btn-primary .original {
+        background-color: #3b82f6; /* accent */
+        color: #fff;
+      }
+      .btn-primary:hover {
+        background-color: #2563eb; /* hover:bg-blue-600 */
+      }
+
+      /* Secondary Button (Connect with Me) */
+      .btn-secondary {
+        border-color: #3b82f6; /* accent */
+        background-color: transparent;
+        color: #3b82f6;
+      }
+      .btn-secondary .original {
+        color: #3b82f6; /* accent */
+        background-color: #e0e5ec; /* light-bg */
+      }
+      .dark .btn-secondary .original {
+        background-color: #222736; /* dark-bg */
+      }
+      .btn-secondary:hover {
+        background-color: #3b82f6; /* accent */
+        color: #fff;
+      }
+
+      /* Animated navbar link */
+      .animated-nav-link {
+        display: inline-block;
+        position: relative;
+        padding-bottom: 5px; /* Add space for the underline */
+      }
+
+      /* Line from left */
+      .animated-nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #3b82f6; /* Accent color */
+        transition: width 0.3s ease-in-out;
+      }
+      
+      /* Line from right */
+      .animated-nav-link::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 2px;
+        background-color: #3b82f6; /* Accent color */
+        transition: width 0.3s ease-in-out;
+      }
+
+      .animated-nav-link:hover::after,
+      .animated-nav-link:hover::before {
+        width: 50%;
+      }
+      
+      /* --- Contact Button --- */
+      .contact-button {
+        --accent-color: #3b82f6;
+        --accent-color-hsl: 217 91% 60%;
+        --accent-glow: hsla(var(--accent-color-hsl) / 0.7);
+        --accent-after-bg: hsla(var(--accent-color-hsl) / 0.75);
+        --accent-radial-1: hsla(217, 91%, 80%, 1);
+        --accent-radial-2: hsla(217, 91%, 70%, 1);
+        --border_radius: 9999px;
+        --transtion: 0.3s ease-in-out;
+        
+        cursor: pointer;
+        position: relative;
+        text-decoration: none;
+        
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        
+        transform-origin: center;
+        
+        padding: 1rem 2rem;
+        background-color: transparent;
+        margin-bottom: 3rem;
+        
+        border: none;
+        border-radius: var(--border_radius);
+        transform: scale(calc(1 + (var(--active, 0) * 0.1)));
+        
+        transition: transform var(--transtion);
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .contact-button:focus-visible {
+        outline: 2px solid var(--accent-color);
+        outline-offset: 4px;
+      }
+
+      .contact-button::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: var(--accent-color);
+        border-radius: var(--border_radius);
+        box-shadow: inset 0 0.5px hsl(0, 0%, 100%), inset 0 -1px 2px 0 hsl(0, 0%, 0%), 0px 4px 10px -4px hsla(0 0% 0% / calc(1 - var(--active, 0))), 0 0 0 calc(var(--active, 0) * 0.375rem) var(--accent-glow);
+        transition: all var(--transtion);
+        z-index: 0;
+      }
+
+      .contact-button::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: var(--accent-after-bg);
+        background-image: radial-gradient(at 51% 89%, var(--accent-radial-1) 0px, transparent 50%), radial-gradient(at 100% 100%, var(--accent-radial-2) 0px, transparent 50%), radial-gradient(at 22% 91%, var(--accent-radial-2) 0px, transparent 50%);
+        background-position: top;
+        opacity: var(--active, 0);
+        border-radius: var(--border_radius);
+        transition: opacity var(--transtion);
+        z-index: 2;
+      }
+
+      .contact-button:is(:hover, :focus-visible) {
+        --active: 1;
+      }
+
+      .contact-button:active {
+        transform: scale(0.97);
+      }
+
+      .contact-button .dots_border {
+        --size_border: calc(100% + 2px);
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: var(--size_border);
+        height: var(--size_border);
+        background-color: transparent;
+        border-radius: var(--border_radius);
+        z-index: 1;
+      }
+
+      .contact-button .dots_border::before {
+        content: "";
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(0deg);
+        transform-origin: left;
+        width: 100%;
+        height: 2rem;
+        background-color: white;
+        mask: linear-gradient(transparent 0%, white 120%);
+        -webkit-mask: linear-gradient(transparent 0%, white 120%);
+        animation: rotate 2s linear infinite;
+      }
+
+      @keyframes rotate {
+        to {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+
+      .contact-button .sparkle {
+        position: relative;
+        z-index: 10;
+        width: 1.75rem;
+        height: 1.75rem;
+      }
+
+      .contact-button .sparkle .path {
+        fill: currentColor;
+        stroke: currentColor;
+        transform-origin: center;
+        color: hsl(0, 0%, 100%);
+      }
+
+      .contact-button:is(:hover, :focus-visible) .sparkle .path {
+        animation: path 1.5s linear 0.5s infinite;
+      }
+
+      .contact-button .sparkle .path:nth-child(1) { --scale_path_1: 1.2; }
+      .contact-button .sparkle .path:nth-child(2) { --scale_path_2: 1.2; }
+      .contact-button .sparkle .path:nth-child(3) { --scale_path_3: 1.2; }
+
+      @keyframes path {
+        0%, 34%, 71%, 100% { transform: scale(1); }
+        17% { transform: scale(var(--scale_path_1, 1)); }
+        49% { transform: scale(var(--scale_path_2, 1)); }
+        83% { transform: scale(var(--scale_path_3, 1)); }
+      }
+
+      .contact-button .text_button {
+        position: relative;
+        z-index: 10;
+        background-image: linear-gradient(90deg, hsla(0 0% 100% / 1) 0%, hsla(0 0% 100% / var(--active, 0)) 120%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: transparent;
+      }
+
+      /* --- Animated Send Button --- */
+      .btn-animated-send {
+        outline: 0;
+        border: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        color: white;
+        background-color: #3b82f6; /* accent */
+        box-shadow: 5px 5px 10px #d1d9e6, -5px -5px 10px #ffffff;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .dark .btn-animated-send {
+        box-shadow: 5px 5px 10px #1a1f2c, -5px -5px 10px #2a3344;
+      }
+
+      .btn-animated-send:hover {
+        background-color: #2563eb;
+        transform: translateY(-2px);
+        box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff;
+      }
+
+      .dark .btn-animated-send:hover {
+        box-shadow: 8px 8px 16px #1a1f2c, -8px -8px 16px #2a3344;
+      }
+
+      .btn-animated-send:focus-visible {
+        outline: 2px solid #3b82f6;
+        outline-offset: 4px;
+      }
+
+      .btn-animated-send .ripple-pulse {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 100%;
+        animation: ripple-keyframes 1.2s linear infinite;
+        width: 1px;
+        height: 1px;
+      }
+
+      @keyframes ripple-keyframes {
+        0% {
+          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+        }
+        100% {
+          box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
